@@ -35,7 +35,7 @@ const MciN = () => {
 
   return (
     <div
-      className="w-full h-full flex flex-col items-center justify-start"
+      className="w-full h-full flex flex-col items-center justify-start mac-cursor-area"
       style={{
         background: "repeating-linear-gradient(135deg, #e5e5dc 0 2px, #d6d6c2 2px 4px)",
         fontFamily: "'VT323', monospace",
