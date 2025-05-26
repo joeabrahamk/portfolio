@@ -128,12 +128,13 @@ const Navbar = ({ activeId, setActiveId }) => {
         } text-white overflow-hidden flex items-center`}
       >
         {/* Hamburger Toggle only on mobile */}
-        {isMobile && (
+        {isMobile && !open && (
           <button
             onClick={toggleMenu}
             className="absolute right-4 text-2xl hover:text-cyan-400 transition z-10 lg:hidden"
           >
-            {open ? '✖' : '☰'}
+            {/* Always show hamburger icon, never X */}
+            ☰
           </button>
         )}
 
@@ -144,16 +145,19 @@ const Navbar = ({ activeId, setActiveId }) => {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 40 }}
-              className="flex justify-between w-full px-16 items-center ml-12"
+              className={`flex w-full px-4 items-center ml-0
+    ${isMobile ? 'justify-evenly' : 'justify-evenly px-16 ml-12'}`}
             >
               {navItems.map((item) => (
                 <li
                   key={item.id}
                   onClick={() => handleNavClick(item.id, item.href)}
-                  className={`flex items-center gap-2 text-sm hover:text-cyan-400 transition cursor-pointer ${
-                    activeId === item.id
-                      ? 'font-bold text-cyan-400'
-                      : ''
+                  className={`${
+                    isMobile
+                      ? 'flex flex-col items-center'
+                      : 'flex flex-row items-center gap-2'
+                  } text-sm hover:text-cyan-400 transition cursor-pointer ${
+                    activeId === item.id ? 'font-bold text-cyan-400' : ''
                   }`}
                 >
                   <div
@@ -165,7 +169,8 @@ const Navbar = ({ activeId, setActiveId }) => {
                   >
                     {item.icon}
                   </div>
-                  <span>{item.name}</span>
+                  {/* Show name only on desktop, next to icon */}
+                  {!isMobile && <span>{item.name}</span>}
                 </li>
               ))}
             </motion.ul>
