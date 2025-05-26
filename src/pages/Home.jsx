@@ -9,26 +9,26 @@ const socialLinks = [
   {
     href: "https://github.com/yourusername",
     label: "GitHub",
-    icon: <FaGithub className="text-cyan-300  transition-colors duration-300" size={22} />,
+    icon: <FaGithub className="text-cyan-300 transition-colors duration-300" size={22} />,
   },
   {
     href: "https://linkedin.com/in/yourusername",
     label: "LinkedIn",
-    icon: <FaLinkedin className="text-blue-400  transition-colors duration-300" size={22} />,
+    icon: <FaLinkedin className="text-blue-400 transition-colors duration-300" size={22} />,
   },
   {
     href: "https://x.com/yourusername",
     label: "X (Twitter)",
-    icon: <FaXTwitter className="text-cyan-300  transition-colors duration-300" size={22} />,
+    icon: <FaXTwitter className="text-cyan-300 transition-colors duration-300" size={22} />,
   },
 ];
 
 const Home = () => {
   return (
-    <div className="h-full flex flex-col justify-center items-center px-6 relative">
+    <div className="h-full flex flex-col justify-center items-center px-4 sm:px-6 relative">
       {/* Side Notch Socials - fixed only on Home */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 z-40">
-        <div className="bg-[#101624]/90 rounded-r-3xl shadow-[0_0_10px_#22d3ee66,_0_2px_8px_#000a] py-7 px-4 flex flex-col gap-6 items-center group transition-all duration-300 scale-105
+      <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-40">
+        <div className="bg-[#101624]/90 rounded-r-3xl shadow-[0_0_10px_#22d3ee66,_0_2px_8px_#000a] py-5 px-2 md:py-7 md:px-4 flex flex-col gap-4 md:gap-6 items-center group transition-all duration-300 scale-105
           border-t-2 border-b-2 border-r-2 border-cyan-400 border-l-0">
           {socialLinks.map((s) => (
             <a
@@ -47,8 +47,8 @@ const Home = () => {
 
       {/* Shooting star SVG for space effect */}
       <svg
-        className="absolute left-10 top-10 opacity-60 animate-pulse"
-        width="60"
+        className="absolute left-4 top-4 sm:left-10 sm:top-10 opacity-60 animate-pulse"
+        width="40"
         height="20"
         viewBox="0 0 60 20"
         fill="none"
@@ -62,7 +62,7 @@ const Home = () => {
           Hey, I'm
         </span>
         <h1
-          className="text-5xl md:text-6xl font-orbitron font-bold text-center select-none transition-transform duration-700 group-hover:scale-110"
+          className="text-4xl xs:text-xl sm:text-6xl md:text-6xl font-orbitron font-bold text-center select-none transition-transform duration-700 group-hover:scale-110"
           style={{
             color: "transparent",
             WebkitTextFillColor: "white",
@@ -94,9 +94,24 @@ const Home = () => {
           {name}
         </h1>
       </div>
-      <p className="text-lg font-inter max-w-xl text-slate-300 text-center">
+      <p className="text-sm xs:text-base sm:text-lg font-inter max-w-xs sm:max-w-xl text-slate-300 text-center">
         A passionate Web Developer & Student Lead with experience in building digital solutions, currently exploring new frontiers in <span className="text-cyan-300 font-semibold">space-themed</span> portfolios.
       </p>
+      {/* Mobile Socials - now below the text */}
+      <div className="flex sm:hidden gap-6 mt-6 mb-2">
+        {socialLinks.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={s.label}
+            className="p-2 rounded-full bg-[#101624]/90 shadow group-hover:text-blue-100 transition-all duration-300 flex items-center active:scale-95"
+          >
+            {s.icon}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

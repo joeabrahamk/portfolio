@@ -13,10 +13,9 @@ const navItems = [
 
 const BORDER_RADIUS = 24; // px
 
-const Navbar = () => {
+const Navbar = ({ activeId, setActiveId }) => {
   const [open, setOpen] = useState(false);
   const [lastInteraction, setLastInteraction] = useState(Date.now());
-  const [activeId, setActiveId] = useState('home');
   const navRef = useRef(null);
   const [navWidth, setNavWidth] = useState(0);
   const [navHeight, setNavHeight] = useState(64);
@@ -93,7 +92,7 @@ const Navbar = () => {
 
     sections.forEach(section => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [setActiveId]);
 
   const toggleMenu = () => {
     setLastInteraction(Date.now());
@@ -128,8 +127,6 @@ const Navbar = () => {
             : ''
         } text-white overflow-hidden flex items-center`}
       >
-        
-
         {/* Hamburger Toggle only on mobile */}
         {isMobile && (
           <button
