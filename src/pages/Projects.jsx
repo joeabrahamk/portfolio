@@ -10,37 +10,39 @@ const projects = [
     tags: ["Disaster Relief", "Inventory", "Real-time"],
   },
   {
+    title: "DVA",
+    description:
+      "Digital Vehicle Assistant (DVA) is a smart, open-source navigation tool designed to optimize fuel-efficient driving and streamline vehicle management",
+    link: "https://github.com/joeabrahamk/DVA-Backend",
+    tags: ["OpenSourceProject", "Navigation website", "FuelEfficiency"],
+  },
+  {
+    title: "Smart Vault",
+    description:
+      "A Python-based software system that encrypts and decrypts files using AES encryption, controlled by a registered USB device as a physical key.",
+    link: "https://github.com/joeabrahamk/Smart_vault",
+    tags: ["Python", "AES Encryption", "Security"],
+  },
+  
+  {
     title: "Lumieresalon.in",
     description: "Freelance site for a premium hair and beauty salon.",
     link: "https://lumieresalon.in",
     tags: ["Freelance", "Salon", "SEO"],
   },
   {
-    title: "DVA",
-    description:
-      "Digital Vehicle Assistant (DVA) is a smart, open-source navigation tool designed to optimize fuel-efficient driving and streamline vehicle management",
-    link: "#",
-    tags: ["OpenSourceProject", "Navigation website", "FuelEfficiency"],
-  },
-  {
     title: "EETIF Website",
     description: "Community site for EETIF with smooth UI and interaction.",
-    link: "#",
+    link: "https://www.eetifoundation.org/",
     tags: ["Community", "Web Design", "Sanity"],
   },
   {
     title: "Code Craft",
     description: "Event site for Code Craft with interactive features.",
-    link: "#",
+    link: "https://www.code-craft.eetifoundation.org/",
     tags: ["Events", "Web Design"],
   },
-  {
-    title: "Smart Vault",
-    description:
-      "A Python-based software system that encrypts and decrypts files using AES encryption, controlled by a registered USB device as a physical key.",
-    link: "#",
-    tags: ["Python", "AES Encryption", "Security"],
-  },
+  
 ];
 
 const Projects = ({ triggerAnimation }) => {

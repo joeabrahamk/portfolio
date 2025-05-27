@@ -10,6 +10,13 @@ const experiences = [
 		description:
 			"Led innovation bootcamps, organized events, and fostered a startup culture on campus.",
 	},
+  {
+		title: "Notion Campus Leader",
+		company: "Notion",
+		time: "2024 - Present",
+		description:
+			"Represented Notion in college, conducted workshops, and promoted productivity tools.",
+	},
 	{
 		title: "Web Lead",
 		company: "EETI Foundation",
@@ -20,17 +27,11 @@ const experiences = [
 	{
 		title: "Marketing & Social Media Manager",
 		company: "IEDC Bootcamp CEC",
-		time: "2023",
+		time: "2023 - 2024",
 		description:
 			"Handled digital outreach and strategy, significantly increasing student participation.",
 	},
-	{
-		title: "Notion Campus Leader",
-		company: "Notion",
-		time: "2023",
-		description:
-			"Represented Notion in college, conducted workshops, and promoted productivity tools.",
-	},
+	
 ];
 
 const ExperienceCard = ({ exp, index, isVisible }) => {

@@ -54,32 +54,32 @@ const DockIcon = ({
 
 const contacts = [
   {
-    href: "mailto:joe@example.com",
+    href: "mailto:joeabrahamk2004@gmail.com",
     label: "Email",
     icon: <FaEnvelope className="text-cyan-300" size={28} />,
   },
   {
-    href: "https://wa.me/919876543210",
+    href: "https://wa.me/917025120451",
     label: "WhatsApp",
     icon: <FaWhatsapp className="text-green-400" size={28} />,
   },
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/joeabrahamk",
     label: "GitHub",
     icon: <FaGithub className="text-gray-200" size={28} />,
   },
   {
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/joe-abraham-k/",
     label: "LinkedIn",
     icon: <FaLinkedin className="text-blue-400" size={28} />,
   },
   {
-    href: "https://x.com/yourusername",
+    href: "https://x.com/Joe_Abraham_K/status/1861644313114870023",
     label: "X (Twitter)",
     icon: <FaXTwitter className="text-white" size={28} />,
   },
   {
-    href: "https://instagram.com/yourusername",
+    href: "https://www.instagram.com/jo.e_abraham/",
     label: "Instagram",
     icon: <FaInstagram className="text-pink-400" size={28} />,
   },

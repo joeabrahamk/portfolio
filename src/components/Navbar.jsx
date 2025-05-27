@@ -8,7 +8,7 @@ const navItems = [
   { name: 'Projects', icon: <Folder size={20} />, id: 'projects' },
   { name: 'Experience', icon: <Briefcase size={20} />, id: 'experience' },
   { name: 'Contact', icon: <Mail size={20} />, id: 'contact' },
-  { name: 'Resume', icon: <FileText size={20} />, id: 'resume', href: '/resume.pdf' }, // Resume button
+  { name: 'Resume', icon: <FileText size={20} />, id: 'resume', href: 'src/assets/RESUME_JOE_ABRAHAM_K.pdf' }, // Resume button
 ];
 
 const BORDER_RADIUS = 24; // px

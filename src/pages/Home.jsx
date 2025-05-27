@@ -7,17 +7,17 @@ const starfield =
 
 const socialLinks = [
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/joeabrahamk",
     label: "GitHub",
     icon: <FaGithub className="text-cyan-300 transition-colors duration-300" size={22} />,
   },
   {
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/joe-abraham-k/",
     label: "LinkedIn",
     icon: <FaLinkedin className="text-blue-400 transition-colors duration-300" size={22} />,
   },
   {
-    href: "https://x.com/yourusername",
+    href: "https://x.com/Joe_Abraham_K/status/1861644313114870023",
     label: "X (Twitter)",
     icon: <FaXTwitter className="text-cyan-300 transition-colors duration-300" size={22} />,
   },
@@ -95,7 +95,7 @@ const Home = () => {
         </h1>
       </div>
       <p className="text-sm xs:text-base sm:text-lg font-inter max-w-xs sm:max-w-xl text-slate-300 text-center">
-        A passionate Web Developer & Student Lead with experience in building digital solutions, currently exploring new frontiers in <span className="text-cyan-300 font-semibold">space-themed</span> portfolios.
+        A passionate developer, team leader, and community builder passionate about crafting meaningful digital experiences. Thrive on collaboration, purposeful execution, and enabling others to succeed through technology and innovation.
       </p>
       {/* Mobile Socials - now below the text */}
       <div className="flex sm:hidden gap-6 mt-6 mb-2">
