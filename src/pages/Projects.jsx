@@ -78,7 +78,7 @@ const Projects = ({ triggerAnimation }) => {
                   : {}
               }
               transition={{
-                duration: 1.2, // Increased from 0.6 to 1.2 for a slower animation
+                duration: .5, // Increased from 0.6 to 1.2 for a slower animation
                 delay: i * 0.15,
                 ease: "easeOut",
               }}

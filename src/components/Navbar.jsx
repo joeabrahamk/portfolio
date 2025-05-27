@@ -111,7 +111,7 @@ const Navbar = ({ activeId, setActiveId }) => {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed top-4 right-0 z-50">
       <motion.div
         ref={navRef}
         initial={{ width: 64, height: 64, borderRadius: '9999px' }}
@@ -131,7 +131,7 @@ const Navbar = ({ activeId, setActiveId }) => {
         {isMobile && !open && (
           <button
             onClick={toggleMenu}
-            className="absolute right-4 text-2xl hover:text-cyan-400 transition z-10 lg:hidden"
+            className="absoulte fixed right-4 text-2xl hover:text-cyan-400 transition z-10 lg:hidden"
           >
             {/* Always show hamburger icon, never X */}
             ☰

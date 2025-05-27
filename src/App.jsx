@@ -11,10 +11,10 @@ const App = () => {
   const [activeId, setActiveId] = useState('home');
 
   return (
-    <div className="bg-[#0a0417] text-white font-sans w-full overflow-x-hidden">
+    <div className="bg-[#0a0417] text-white font-sans w-full overflow-x-hidden scrollbar-hide">
       <Starfield />
       <Navbar activeId={activeId} setActiveId={setActiveId} />
-      <main className="relative z-10 snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
+      <main className="relative z-10 snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth scrollbar-hide">
         <section id="home" className="snap-start h-screen"><Home /></section>
         <section id="about" className="snap-start h-screen"><About /></section>
         <section id="projects" className="snap-start h-screen">

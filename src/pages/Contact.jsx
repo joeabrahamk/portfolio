@@ -190,7 +190,7 @@ const Contact = () => {
           <motion.div
             onMouseMove={(e) => mouseX.set(e.pageX)}
             onMouseLeave={() => mouseX.set(Infinity)}
-            className="bg-[#181e2a]/70 border border-cyan-400 rounded-2xl px-6 py-3 flex items-center gap-2 shadow-lg backdrop-blur-md mb-8"
+            className="bg-[#181e2a]/70 border border-cyan-400 rounded-2xl px-6 py-3 flex items-center gap-2 shadow-lg backdrop-blur-md mb-8 absolute bottom-0"
           >
             {contacts.map((c) => (
               <DockIcon key={c.label} mouseX={mouseX}>
