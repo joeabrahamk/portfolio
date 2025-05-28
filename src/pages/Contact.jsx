@@ -74,7 +74,7 @@ const contacts = [
     icon: <FaLinkedin className="text-blue-400" size={28} />,
   },
   {
-    href: "https://x.com/Joe_Abraham_K/status/1861644313114870023",
+    href: "https://x.com/Joe_Abraham_K",
     label: "X (Twitter)",
     icon: <FaXTwitter className="text-white" size={28} />,
   },

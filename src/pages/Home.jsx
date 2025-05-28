@@ -17,7 +17,7 @@ const socialLinks = [
     icon: <FaLinkedin className="text-blue-400 transition-colors duration-300" size={22} />,
   },
   {
-    href: "https://x.com/Joe_Abraham_K/status/1861644313114870023",
+    href: "https://x.com/Joe_Abraham_K",
     label: "X (Twitter)",
     icon: <FaXTwitter className="text-cyan-300 transition-colors duration-300" size={22} />,
   },
