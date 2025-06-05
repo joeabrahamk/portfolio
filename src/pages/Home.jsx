@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import TechStackMarquee from "../components/TechStackMarquee";
+
 
 const name = "Joe Abraham K";
 
@@ -25,7 +27,8 @@ const socialLinks = [
 
 const Home = () => {
   return (
-    <div className="h-full flex flex-col justify-center items-center px-4 sm:px-6 relative">
+
+<div className="h-full flex flex-col justify-between items-center relative overflow-x-hidden">
       {/* Side Notch Socials - fixed only on Home */}
       <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-40">
         <div className="bg-[#101624]/90 rounded-r-3xl shadow-[0_0_10px_#22d3ee66,_0_2px_8px_#000a] py-5 px-2 md:py-7 md:px-4 flex flex-col gap-4 md:gap-6 items-center group transition-all duration-300 scale-105
@@ -56,13 +59,14 @@ const Home = () => {
         {/* ... */}
       </svg>
 
-      <div className="flex flex-col items-center mb-6 group transition-transform duration-500">
+      {/* Centered content */}
+      <div className="flex flex-1 flex-col items-center justify-center w-full mt-[-10vh]">
         {/* Badge style for "Hey, I'm" */}
         <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full mb-2 shadow-sm">
           Hey, I'm
         </span>
         <h1
-          className="text-4xl xs:text-xl sm:text-6xl md:text-6xl font-orbitron font-bold text-center select-none transition-transform duration-700 group-hover:scale-110"
+          className="text-4xl xs:text-xl sm:text-6xl md:text-6xl font-orbitron font-bold text-center select-none transition-transform duration-700 hover:scale-110"
           style={{
             color: "transparent",
             WebkitTextFillColor: "white",
@@ -93,24 +97,17 @@ const Home = () => {
         >
           {name}
         </h1>
+        <p className="text-sm xs:text-base sm:text-lg font-inter max-w-xs sm:max-w-xl text-slate-300 text-center mt-4">
+          A passionate developer, team leader, and community builder passionate about crafting meaningful digital experiences. Thrive on collaboration, purposeful execution, and enabling others to succeed through technology and innovation.
+        </p>
       </div>
-      <p className="text-sm xs:text-base sm:text-lg font-inter max-w-xs sm:max-w-xl text-slate-300 text-center">
-        A passionate developer, team leader, and community builder passionate about crafting meaningful digital experiences. Thrive on collaboration, purposeful execution, and enabling others to succeed through technology and innovation.
-      </p>
+
       {/* Mobile Socials - now below the text */}
-      <div className="flex sm:hidden gap-6 mt-6 mb-2">
-        {socialLinks.map((s) => (
-          <a
-            key={s.label}
-            href={s.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={s.label}
-            className="p-2 rounded-full bg-[#101624]/90 shadow group-hover:text-blue-100 transition-all duration-300 flex items-center active:scale-95"
-          >
-            {s.icon}
-          </a>
-        ))}
+      <div className="flex sm:hidden gap-6 mt-6 mb-2"></div>
+
+      {/* TechStackMarquee at the bottom, full width, extending beyond screen edges */}
+      <div className="absolute left-1/2 bottom-7 -translate-x-1/2 w-[105vw] max-w-none">
+        <TechStackMarquee />
       </div>
     </div>
   );
