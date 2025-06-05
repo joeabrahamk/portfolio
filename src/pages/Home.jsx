@@ -106,7 +106,7 @@ const Home = () => {
       <div className="flex sm:hidden gap-6 mt-6 mb-2"></div>
 
       {/* TechStackMarquee at the bottom, full width, extending beyond screen edges */}
-      <div className="absolute left-1/2 bottom-7 -translate-x-1/2 w-[115vw] max-w-none sm:bottom-20">
+      <div className="absolute left-1/2 bottom-20 sm:bottom-7 -translate-x-1/2 w-[105vw] max-w-none">
         <TechStackMarquee />
       </div>
     </div>
