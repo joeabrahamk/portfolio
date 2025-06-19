@@ -8,7 +8,12 @@ const navItems = [
   { name: 'Projects', icon: <Folder size={20} />, id: 'projects' },
   { name: 'Experience', icon: <Briefcase size={20} />, id: 'experience' },
   { name: 'Contact', icon: <Mail size={20} />, id: 'contact' },
-  { name: 'Resume', icon: <FileText size={20} />, id: 'resume', href: 'src/assets/RESUME_JOE_ABRAHAM_K.pdf' }, // Resume button
+  { 
+    name: 'Resume', 
+    icon: <FileText size={20} />, 
+    id: 'resume',
+    href: '/path/to/A-joe_resume.pdf' // <-- Add the path to your PDF here
+  },
 ];
 
 const BORDER_RADIUS = 24; // px
@@ -104,7 +109,13 @@ const Navbar = ({ activeId, setActiveId }) => {
     setOpen(false);
     setActiveId(id);
     if (id === 'resume' && href) {
-      window.open(href, '_blank');
+      // Create a temporary link to trigger download
+      const link = document.createElement('a');
+      link.href = href;
+      link.download = href.split('/').pop(); // Use the file name from the path
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -177,6 +188,8 @@ const Navbar = ({ activeId, setActiveId }) => {
           )}
         </AnimatePresence>
       </motion.div>
+      
+      
     </div>
   );
 };
