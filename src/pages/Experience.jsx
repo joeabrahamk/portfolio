@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 
 const experiences = [
 	{
+		title: "Software Engineer Intern",
+		company: "Geojit Technologies",
+		time: "2025",
+		description:
+			"Developed and maintained responsive front-end interfaces using Angular, integrated with SQL databases, as part of a cross-functional team delivering real-world web applications. Focused on performance optimization and enhancing user experience.",
+	},
+	{
 		title: "Student Lead",
 		company: "IEDC Bootcamp CEC",
 		time: "2024 - Present",
