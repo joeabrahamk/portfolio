@@ -27,7 +27,7 @@ const experiences = [
 	{
 		title: "Web Lead",
 		company: "EETI Foundation",
-		time: "2023 - Present",
+		time: "2023 - 2025",
 		description:
 			"Managed and built community websites for technical fests and initiatives.",
 	},

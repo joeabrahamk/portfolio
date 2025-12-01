@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -48,10 +48,17 @@ const projects = [
 const Projects = ({ triggerAnimation }) => {
   const [hasEntered, setHasEntered] = useState(false);
 
+  // Ensure animations run only once. When `triggerAnimation` toggles we
+  // previously reset `hasEntered` to false then true which caused the
+  // elements to re-animate. Track whether we've already run the enter
+  // animation and only trigger it the first time the section becomes active.
+  const hasAnimatedRef = useRef(false);
   useEffect(() => {
     if (triggerAnimation !== undefined) {
-      setHasEntered(false);
-      requestAnimationFrame(() => setHasEntered(true));
+      if (triggerAnimation && !hasAnimatedRef.current) {
+        hasAnimatedRef.current = true;
+        setHasEntered(true);
+      }
     } else {
       setHasEntered(true);
     }
@@ -66,7 +73,7 @@ const Projects = ({ triggerAnimation }) => {
           const isLeft = i % 2 === 0;
           return (
             <motion.div
-              key={project.title + (triggerAnimation ?? "")} // <--- key includes triggerAnimation
+              key={project.title} // stable key so AOS doesn't re-run when triggerAnimation changes
               initial={{
                 opacity: 0,
                 x: isLeft ? -100 : 100,
