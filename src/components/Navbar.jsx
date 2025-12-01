@@ -8,11 +8,11 @@ const navItems = [
   { name: 'Projects', icon: <Folder size={20} />, id: 'projects' },
   { name: 'Experience', icon: <Briefcase size={20} />, id: 'experience' },
   { name: 'Contact', icon: <Mail size={20} />, id: 'contact' },
-  { 
-    name: 'Resume', 
-    icon: <FileText size={20} />, 
+  {
+    name: 'Resume',
+    icon: <FileText size={20} />,
     id: 'resume',
-    href: '/path/to/A-joe_resume.pdf' // <-- Add the path to your PDF here
+    href: '/JOE_ABRAHAM_K.pdf',
   },
 ];
 
