@@ -9,6 +9,7 @@ const experiences = [
 		time: "2025",
 		description:
 			"Developed and maintained responsive front-end interfaces using Angular, integrated with SQL databases, as part of a cross-functional team delivering real-world web applications. Focused on performance optimization and enhancing user experience.",
+		type: "Internship",
 	},
 	{
 		title: "Student Lead",
@@ -16,6 +17,7 @@ const experiences = [
 		time: "2024 - Present",
 		description:
 			"Led innovation bootcamps, organized events, and fostered a startup culture on campus.",
+		type: "Leadership",
 	},
   {
 		title: "Notion Campus Leader",
@@ -23,6 +25,7 @@ const experiences = [
 		time: "2024 - Present",
 		description:
 			"Represented Notion in college, conducted workshops, and promoted productivity tools.",
+		type: "Ambassador",
 	},
 	{
 		title: "Web Lead",
@@ -30,6 +33,7 @@ const experiences = [
 		time: "2023 - 2025",
 		description:
 			"Managed and built community websites for technical fests and initiatives.",
+		type: "Leadership",
 	},
 	{
 		title: "Marketing & Social Media Manager",
@@ -37,6 +41,7 @@ const experiences = [
 		time: "2023 - 2024",
 		description:
 			"Handled digital outreach and strategy, significantly increasing student participation.",
+		type: "Marketing",
 	},
 	
 ];
@@ -45,13 +50,15 @@ const ExperienceCard = ({ exp, index, isVisible }) => {
 	const alignRight = index % 2 === 0;
 
 	return (
-		<motion.div
+		<motion.article
 			initial={{ opacity: 0, y: 40 }}
 			animate={isVisible ? { opacity: 1, y: 0 } : {}}
 			transition={{ duration: 0.6, delay: index * 0.15 }}
 			className={`relative z-10 mb-20 w-full flex ${
 				alignRight ? "justify-end" : "justify-start"
 			}`}
+			itemScope
+			itemType="https://schema.org/OrganizationRole"
 		>
 			<div
 				className={`backdrop-blur-lg bg-white/5 border border-cyan-400/20 shadow-lg p-4 sm:p-6 max-w-xs sm:max-w-md w-full rounded-2xl ${
@@ -63,17 +70,21 @@ const ExperienceCard = ({ exp, index, isVisible }) => {
 						alignRight ? "justify-end" : "justify-start"
 					}`}
 				>
-					<div className="h-3 w-3 bg-cyan-400 rounded-full shadow shadow-cyan-400/40" />
-					<h3 className="font-orbitron text-lg text-cyan-300">{exp.title}</h3>
+					<div className="h-3 w-3 bg-cyan-400 rounded-full shadow shadow-cyan-400/40" aria-hidden="true" />
+					<h3 className="font-orbitron text-lg text-cyan-300" itemProp="roleName">{exp.title}</h3>
 				</div>
 				<p className="text-sm text-cyan-100 font-inter italic">
-					{exp.company} &middot; {exp.time}
+					<span itemProp="memberOf" itemScope itemType="https://schema.org/Organization">
+						<span itemProp="name">{exp.company}</span>
+					</span>
+					{" "}&middot;{" "}
+					<time itemProp="startDate">{exp.time}</time>
 				</p>
-				<p className="mt-3 text-gray-300 text-sm font-inter leading-relaxed">
+				<p className="mt-3 text-gray-300 text-sm font-inter leading-relaxed" itemProp="description">
 					{exp.description}
 				</p>
 			</div>
-		</motion.div>
+		</motion.article>
 	);
 };
 
@@ -119,17 +130,18 @@ const Experience = () => {
 	}, []);
 
 	return (
-		<div
+		<article
 			className="w-full h-screen px-2 pt-24 relative text-white overflow-y-auto overflow-x-hidden scrollbar-hide"
 			ref={sectionRef}
+			aria-labelledby="experience-heading"
 		>
-			<h2 className="text-4xl font-orbitron text-center mb-20 text-cyan-400">
+			<h2 id="experience-heading" className="text-4xl font-orbitron text-center mb-20 text-cyan-400">
 				Experience
 			</h2>
 
-			<div className="relative max-w-4xl mx-auto">
+			<div className="relative max-w-4xl mx-auto" role="list" aria-label="Work experience and leadership roles">
 				{/* Glowing animated timeline */}
-				<div className="absolute left-1/2 top-0 w-1 h-full -translate-x-1/2 z-0">
+				<div className="absolute left-1/2 top-0 w-1 h-full -translate-x-1/2 z-0" aria-hidden="true">
 					<div className="w-full h-full bg-cyan-900/20 absolute" />
 					<motion.div
 						className="w-full bg-cyan-400 rounded-full blur-sm origin-top"
@@ -142,7 +154,7 @@ const Experience = () => {
 
 				{/* Experience Cards */}
 				{experiences.map((exp, i) => (
-					<div key={i} data-index={i} className="px-1 sm:px-0">
+					<div key={i} data-index={i} className="px-1 sm:px-0" role="listitem">
 						<ExperienceCard
 							exp={exp}
 							index={i}
@@ -151,7 +163,7 @@ const Experience = () => {
 					</div>
 				))}
 			</div>
-		</div>
+		</article>
 	);
 };
 

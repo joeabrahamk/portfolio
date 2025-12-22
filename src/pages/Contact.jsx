@@ -55,33 +55,33 @@ const DockIcon = ({
 const contacts = [
   {
     href: "mailto:joeabrahamk2004@gmail.com",
-    label: "Email",
-    icon: <FaEnvelope className="text-cyan-300" size={28} />,
+    label: "Send email to Joe Abraham K",
+    icon: <FaEnvelope className="text-cyan-300" size={28} aria-hidden="true" />,
   },
   {
     href: "https://wa.me/917025120451",
-    label: "WhatsApp",
-    icon: <FaWhatsapp className="text-green-400" size={28} />,
+    label: "Message Joe Abraham K on WhatsApp",
+    icon: <FaWhatsapp className="text-green-400" size={28} aria-hidden="true" />,
   },
   {
     href: "https://github.com/joeabrahamk",
-    label: "GitHub",
-    icon: <FaGithub className="text-gray-200" size={28} />,
+    label: "Visit Joe Abraham K's GitHub profile",
+    icon: <FaGithub className="text-gray-200" size={28} aria-hidden="true" />,
   },
   {
     href: "https://www.linkedin.com/in/joe-abraham-k/",
-    label: "LinkedIn",
-    icon: <FaLinkedin className="text-blue-400" size={28} />,
+    label: "Connect with Joe Abraham K on LinkedIn",
+    icon: <FaLinkedin className="text-blue-400" size={28} aria-hidden="true" />,
   },
   {
     href: "https://x.com/Joe_Abraham_K",
-    label: "X (Twitter)",
-    icon: <FaXTwitter className="text-white" size={28} />,
+    label: "Follow Joe Abraham K on X (Twitter)",
+    icon: <FaXTwitter className="text-white" size={28} aria-hidden="true" />,
   },
   {
     href: "https://www.instagram.com/jo.e_abraham/",
-    label: "Instagram",
-    icon: <FaInstagram className="text-pink-400" size={28} />,
+    label: "Follow Joe Abraham K on Instagram",
+    icon: <FaInstagram className="text-pink-400" size={28} aria-hidden="true" />,
   },
 ];
 
@@ -114,11 +114,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-screen w-full overflow-y-auto scrollbar-hide">
+    <article className="h-screen w-full overflow-y-auto scrollbar-hide" aria-labelledby="contact-heading">
       <div className="min-h-screen w-full flex flex-col items-center scale-[.9] px-4">
         <div className="w-full flex flex-col items-center px-6 text-center relative min-h-screen justify-center">
           <div className="w-full flex flex-col justify-center items-center flex-1">
-            <h2 className="text-4xl font-orbitron text-cyan-400 mb-4">Contact</h2>
+            <h2 id="contact-heading" className="text-4xl font-orbitron text-cyan-400 mb-4">Contact</h2>
             <p className="text-lg font-inter mb-8">
               Feel free to reach out via any platform below!
             </p>
@@ -209,8 +209,11 @@ const Contact = () => {
         </div>
 
         <div className="w-full relative mt-12">
-          <footer className="text-sm text-white font-mono py-4 flex justify-center items-center">
-            <span>© 2025 Joe Abraham K. All rights reserved.</span>
+          <footer className="text-sm text-white font-mono py-4 flex justify-center items-center" role="contentinfo">
+            <span itemScope itemType="https://schema.org/Person">
+              <meta itemProp="name" content="Joe Abraham K" />
+              © 2025 <span itemProp="name">Joe Abraham K</span>. All rights reserved.
+            </span>
           </footer>
           <button
             className="absolute bottom-4 right-2 sm:right-4 bg-[#222] border-2 border-[#0ff] rounded-lg p-1.5 sm:p-2 shadow-lg hover:scale-110 active:scale-95 transition"
@@ -253,7 +256,7 @@ const Contact = () => {
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 

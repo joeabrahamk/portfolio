@@ -122,7 +122,7 @@ const Navbar = ({ activeId, setActiveId }) => {
   };
 
   return (
-    <div className="fixed top-4 right-0 z-50">
+    <nav className="fixed top-4 right-0 z-50" role="navigation" aria-label="Main navigation">
       <motion.div
         ref={navRef}
         initial={{ width: 64, height: 64, borderRadius: '9999px' }}
@@ -143,6 +143,9 @@ const Navbar = ({ activeId, setActiveId }) => {
           <button
             onClick={toggleMenu}
             className="absoulte fixed right-4 text-2xl hover:text-cyan-400 transition z-10 lg:hidden"
+            aria-label="Open navigation menu"
+            aria-expanded={open}
+            aria-controls="main-nav-list"
           >
             {/* Always show hamburger icon, never X */}
             ☰
@@ -153,16 +156,23 @@ const Navbar = ({ activeId, setActiveId }) => {
         <AnimatePresence>
           {(open || !isMobile) && (
             <motion.ul
+              id="main-nav-list"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 40 }}
               className={`flex w-full px-4 items-center ml-0
     ${isMobile ? 'justify-evenly' : 'justify-evenly px-16 ml-12'}`}
+              role="menubar"
             >
               {navItems.map((item) => (
                 <li
                   key={item.id}
                   onClick={() => handleNavClick(item.id, item.href)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleNavClick(item.id, item.href)}
+                  tabIndex={0}
+                  role="menuitem"
+                  aria-label={item.id === 'resume' ? `Download ${item.name}` : `Navigate to ${item.name} section`}
+                  aria-current={activeId === item.id ? 'page' : undefined}
                   className={`${
                     isMobile
                       ? 'flex flex-col items-center'
@@ -177,6 +187,7 @@ const Navbar = ({ activeId, setActiveId }) => {
                         ? 'bg-cyan-500/20 ring-2 ring-cyan-400'
                         : 'bg-white/10 hover:bg-white/20'
                     }`}
+                    aria-hidden="true"
                   >
                     {item.icon}
                   </div>
@@ -190,7 +201,7 @@ const Navbar = ({ activeId, setActiveId }) => {
       </motion.div>
       
       
-    </div>
+    </nav>
   );
 };
 

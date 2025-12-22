@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import TechStackMarquee from "../components/TechStackMarquee";
 
-
 const name = "Joe Abraham K";
+const jobTitle = "Full Stack Developer & Tech Leader";
 
 const starfield =
   "url(\"data:image/svg+xml;utf8,<svg width='40' height='40' xmlns='http://www.w3.org/2000/svg'><circle cx='10' cy='10' r='1.5' fill='white'/><circle cx='30' cy='20' r='1' fill='white'/><circle cx='20' cy='30' r='0.7' fill='white'/><circle cx='35' cy='35' r='1.2' fill='white'/><circle cx='5' cy='25' r='0.8' fill='white'/></svg>\")";
@@ -10,27 +10,31 @@ const starfield =
 const socialLinks = [
   {
     href: "https://github.com/joeabrahamk",
-    label: "GitHub",
-    icon: <FaGithub className="text-cyan-300 transition-colors duration-300" size={22} />,
+    label: "Visit Joe Abraham K's GitHub profile",
+    icon: <FaGithub className="text-cyan-300 transition-colors duration-300" size={22} aria-hidden="true" />,
   },
   {
     href: "https://www.linkedin.com/in/joe-abraham-k/",
-    label: "LinkedIn",
-    icon: <FaLinkedin className="text-blue-400 transition-colors duration-300" size={22} />,
+    label: "Connect with Joe Abraham K on LinkedIn",
+    icon: <FaLinkedin className="text-blue-400 transition-colors duration-300" size={22} aria-hidden="true" />,
   },
   {
     href: "https://x.com/Joe_Abraham_K",
-    label: "X (Twitter)",
-    icon: <FaXTwitter className="text-cyan-300 transition-colors duration-300" size={22} />,
+    label: "Follow Joe Abraham K on X (Twitter)",
+    icon: <FaXTwitter className="text-cyan-300 transition-colors duration-300" size={22} aria-hidden="true" />,
   },
 ];
 
 const Home = () => {
   return (
-
-<div className="h-full flex flex-col justify-between items-center relative overflow-x-hidden">
+    <article className="h-full flex flex-col justify-between items-center relative overflow-x-hidden" itemScope itemType="https://schema.org/Person">
+      {/* Hidden structured data for SEO */}
+      <meta itemProp="name" content={name} />
+      <meta itemProp="jobTitle" content={jobTitle} />
+      <meta itemProp="url" content="https://joeabrahamk.dev" />
+      
       {/* Side Notch Socials - fixed only on Home */}
-      <div className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-40">
+      <nav className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-40" aria-label="Social media links">
         <div className="bg-[#101624]/90 rounded-r-3xl shadow-[0_0_10px_#22d3ee66,_0_2px_8px_#000a] py-5 px-2 md:py-7 md:px-4 flex flex-col gap-4 md:gap-6 items-center group transition-all duration-300 scale-105
           border-t-2 border-b-2 border-r-2 border-cyan-400 border-l-0">
           {socialLinks.map((s) => (
@@ -40,13 +44,15 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
+              title={s.label}
+              itemProp="sameAs"
               className="group p-2 rounded-full bg-white/10 group-hover:text-blue-100 transition-all duration-300 shadow flex items-center hover:translate-x-2 active:scale-95"
             >
               {s.icon}
             </a>
           ))}
         </div>
-      </div>
+      </nav>
 
       {/* Shooting star SVG for space effect */}
       <svg
@@ -60,13 +66,14 @@ const Home = () => {
       </svg>
 
       {/* Centered content */}
-      <div className="flex flex-1 flex-col items-center justify-center w-full mt-[-10vh]">
+      <header className="flex flex-1 flex-col items-center justify-center w-full mt-[-10vh]">
         {/* Badge style for "Hey, I'm" */}
         <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full mb-2 shadow-sm">
           Hey, I'm
         </span>
         <h1
           className="text-4xl xs:text-xl sm:text-6xl md:text-6xl font-orbitron font-bold text-center select-none transition-transform duration-700 hover:scale-110"
+          itemProp="name"
           style={{
             color: "transparent",
             WebkitTextFillColor: "white",
@@ -97,11 +104,13 @@ const Home = () => {
         >
           {name}
         </h1>
+        {/* Job title for SEO */}
+        <p className="sr-only" itemProp="jobTitle">{jobTitle}</p>
         {/* Subtitle/description */}
-        <p className="text-sm xs:text-base sm:text-lg font-inter max-w-xs sm:max-w-xl text-slate-300 text-center mt-4">
+        <p className="text-sm xs:text-base sm:text-lg font-inter max-w-xs sm:max-w-xl text-slate-300 text-center mt-4" itemProp="description">
           A passionate developer, team leader, and community builder passionate about crafting meaningful digital experiences. Thrive on collaboration, purposeful execution, and enabling others to succeed through technology and innovation.
         </p>
-      </div>
+      </header>
 
       {/* Mobile Socials - now below the text */}
       <div className="flex sm:hidden gap-6 mt-6 mb-2"></div>
@@ -109,7 +118,7 @@ const Home = () => {
       {/* <div className="absolute left-1/2 bottom-20 sm:bottom-7 -translate-x-1/2 w-[105vw] max-w-none">
         <TechStackMarquee />
       </div>*/}
-    </div>
+    </article>
   );
 };
 
