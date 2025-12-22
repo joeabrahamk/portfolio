@@ -29,12 +29,14 @@ const About = () => {
           ))}
         </div>
 
-        {/* Apple Rainbow Logo */}
+        {/* Apple Rainbow Logo - optimized loading */}
         <img
           src={apple}
           alt="Vintage Apple rainbow logo on Macintosh computer"
           className="absolute top-8 left-8 w-6 h-6 object-contain"
           loading="lazy"
+          decoding="async"
+          fetchPriority="low"
           width="24"
           height="24"
         />
