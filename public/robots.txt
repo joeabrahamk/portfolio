@@ -1,11 +1,11 @@
 # Robots.txt for Joe Abraham K Portfolio
-# https://joeabrahamk.dev
+# https://www.joeabrahamk.me
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://joeabrahamk.dev/sitemap.xml
+Sitemap: https://www.joeabrahamk.me/sitemap.xml
 
 # Disallow admin or private paths (if any)
 Disallow: /api/

@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preconnect FIRST for fastest font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <!-- Primary Meta Tags -->
     <title>Joe Abraham K | Full Stack Developer & Tech Leader</title>
     <meta name="title" content="Joe Abraham K | Full Stack Developer & Tech Leader" />
@@ -15,7 +19,7 @@
     <meta name="revisit-after" content="7 days" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://joeabrahamk.dev/" />
+    <link rel="canonical" href="https://www.joeabrahamk.me/" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -23,10 +27,10 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://joeabrahamk.dev/" />
+    <meta property="og:url" content="https://www.joeabrahamk.me/" />
     <meta property="og:title" content="Joe Abraham K | Full Stack Developer & Tech Leader" />
     <meta property="og:description" content="Passionate full-stack developer, team leader, and community builder. Explore my projects, experience, and get in touch." />
-    <meta property="og:image" content="https://joeabrahamk.dev/og-image.png" />
+    <meta property="og:image" content="https://www.joeabrahamk.me/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Joe Abraham K Portfolio" />
@@ -34,10 +38,10 @@
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://joeabrahamk.dev/" />
+    <meta name="twitter:url" content="https://www.joeabrahamk.me/" />
     <meta name="twitter:title" content="Joe Abraham K | Full Stack Developer & Tech Leader" />
     <meta name="twitter:description" content="Passionate full-stack developer, team leader, and community builder. Explore my projects, experience, and get in touch." />
-    <meta name="twitter:image" content="https://joeabrahamk.dev/og-image.png" />
+    <meta name="twitter:image" content="https://www.joeabrahamk.me/og-image.png" />
     <meta name="twitter:creator" content="@Joe_Abraham_K" />
     <meta name="twitter:site" content="@Joe_Abraham_K" />
     
@@ -54,8 +58,8 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Joe Abraham K",
-        "url": "https://joeabrahamk.dev",
-        "image": "https://joeabrahamk.dev/og-image.png",
+        "url": "https://www.joeabrahamk.me",
+        "image": "https://www.joeabrahamk.me/og-image.png",
         "jobTitle": "Full Stack Developer",
         "description": "Passionate full-stack developer, team leader, and community builder specializing in modern web technologies.",
         "sameAs": [
@@ -72,10 +76,16 @@
       }
     </script>
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+    <!-- Non-blocking font loading with font-display: swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet" /></noscript>
+    
+    <!-- Critical CSS inline for faster FCP -->
+    <style>
+      body{background:#0a0417;color:#fff;font-family:Inter,system-ui,-apple-system,sans-serif;margin:0}
+      .font-orbitron{font-family:Orbitron,system-ui,sans-serif}
+      #root{min-height:100vh}
+    </style>
   </head>
   <body class="bg-background text-white font-sans">
     <!-- Noscript fallback for SEO -->
