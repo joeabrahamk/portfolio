@@ -5,23 +5,13 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Generate source maps for better debugging
-    sourcemap: false,
-    // Optimize chunk sizes
+    // Optimize chunk sizes for better loading performance
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           motion: ['framer-motion'],
         },
-      },
-    },
-    // Minify for better performance (helps SEO via Core Web Vitals)
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
       },
     },
   },
