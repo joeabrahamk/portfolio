@@ -10,6 +10,7 @@ const projects = [
     tags: ["Disaster Relief", "Inventory", "Real-time"],
     type: "WebApplication",
   },
+  
   {
     title: "DVA",
     description:
@@ -17,6 +18,14 @@ const projects = [
     link: "https://github.com/joeabrahamk/DVA-Backend",
     tags: ["OpenSourceProject", "Navigation website", "FuelEfficiency"],
     type: "SoftwareApplication",
+  },
+
+  {
+    title: "Tilliant",
+    description: "I developed a modern website for Tilliant that highlights their mission to help organizations avoid “digital obesity” by streamlining technology and prioritizing people-first, efficient solutions.",
+    link: "https://www.tilliant.com/",
+    tags: ["Freelance", "Digital presence", "SEO"],
+    type: "WebSite",
   },
   {
     title: "Smart Vault",
@@ -51,8 +60,10 @@ const projects = [
   
 ];
 
+
 const Projects = ({ triggerAnimation }) => {
   const [hasEntered, setHasEntered] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   // Ensure animations run only once. When `triggerAnimation` toggles we
   // previously reset `hasEntered` to false then true which caused the
@@ -70,12 +81,15 @@ const Projects = ({ triggerAnimation }) => {
     }
   }, [triggerAnimation]);
 
+  // Show only 3 projects unless showAll is true
+  const visibleProjects = showAll ? projects : projects.slice(0, 6);
+
   return (
     <article className="h-screen overflow-y-auto flex flex-col items-center px-6 py-16 text-center md:pt-28 scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent [&::-webkit-scrollbar]:hidden scrollbar-hide" aria-labelledby="projects-heading">
       <h2 id="projects-heading" className="text-4xl font-orbitron mb-10 text-cyan-400">Projects</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl w-full px-2 pb-10" role="list" aria-label="Portfolio projects by Joe Abraham K">
-        {projects.map((project, i) => {
+        {visibleProjects.map((project, i) => {
           const isLeft = i % 2 === 0;
           return (
             <motion.article
@@ -125,7 +139,7 @@ const Projects = ({ triggerAnimation }) => {
               <p className="text-sm text-gray-300 mb-4 font-inter text-left" itemProp="description">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2" aria-label={`Technologies: ${project.tags.join(', ')}`}>
+              <div className="flex flex-wrap gap-2" aria-label={`Technologies: ${project.tags.join(', ')}`}> 
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -140,6 +154,17 @@ const Projects = ({ triggerAnimation }) => {
           );
         })}
       </div>
+      {projects.length > 3 && (
+        <div className="w-full flex justify-end">
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="mt-2 px-8 py-2 bg-[#101624]/90 rounded-xl shadow-[0_0_10px_#22d3ee66,_0_2px_8px_#000a] border-t-2 border-b-2 border-cyan-400 text-cyan-200 font-semibold transition hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            style={{ minHeight: '44px', minWidth: '120px' }}
+          >
+            {showAll ? 'Show Less' : 'Show All'}
+          </button>
+        </div>
+      )}
     </article>
   );
 };

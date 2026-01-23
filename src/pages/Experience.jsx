@@ -14,7 +14,7 @@ const experiences = [
 	{
 		title: "Student Lead",
 		company: "IEDC Bootcamp CEC",
-		time: "2024 - Present",
+		time: "2024 - 2026",
 		description:
 			"Led innovation bootcamps, organized events, and fostered a startup culture on campus.",
 		type: "Leadership",
