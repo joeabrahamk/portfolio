@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
+{
+    title: "Soft Stitches",
+    description: "E-commerce platform for a clothing brand, featuring a custom design, payment gateway, inventory management, and SEO optimization.",
+    link: "https://www.softstitches.in/",
+    tags: ["E-commerce", "Full-Stack", "SEO"],
+    type: "WebApplication",
+  },
+
   {
     title: "4 Wayanad",
     description: "Disaster relief app providing real-time camp inventory data.",
