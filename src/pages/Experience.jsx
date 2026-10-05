@@ -30,7 +30,7 @@ const experiences = [
   {
 		title: "Notion Campus Leader",
 		company: "Notion",
-		time: "2024 - Present",
+		time: "2024 - 2026",
 		description:
 			"Represented Notion in college, conducted workshops, and promoted productivity tools.",
 		type: "Ambassador",
