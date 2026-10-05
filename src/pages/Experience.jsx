@@ -5,6 +5,14 @@ import { motion } from "framer-motion";
 const experiences = [
 	{
 		title: "Software Engineer Intern",
+		company: "PUMEX Infotech",
+		time: "2026",
+		description:
+			"Worked on AI model training and dataset analysis, focusing on data quality, preprocessing, and evaluation. Took ownership of key tasks, coordinated with team members, and contributed to efficient workflows, quality assurance, and timely project delivery.",
+		type: "Internship",
+	},
+	{
+		title: "Software Developer Intern",
 		company: "Geojit Technologies",
 		time: "2025",
 		description:
